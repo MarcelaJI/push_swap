@@ -15,6 +15,8 @@ SRC		= src/instructions_1.c \
 			src/quick_sort.c \
 			src/sort.c
 
+MAKEFLAGS += --no-print-directory
+
 INCLUDE = -I include -I $(PRINTF)
 OBJS	= $(SRC:.c=.o)
 

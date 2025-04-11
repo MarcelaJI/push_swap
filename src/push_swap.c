@@ -1,41 +1,15 @@
 #include "../include/push_swap.h"
 
-void	push_swap(char **av)
+int	main(int argc, char **argv)
 {
-	t_piles		pile;
-	int			size;
-	int			i;
+	t_stack	*stack_a;
 
-	i = -1;
-	size = push_swap_strlen(av);
-	pile.a = malloc(size * sizeof(int));
-	if (!pile.a)
-		return ;
-	pile.size_a = size;
-	pile.b = malloc(size * sizeof(int));
-	if (!pile.b)
+	stack_a = NULL;
+	if (argc > 1)
 	{
-		free(pile.a);
-		return ;
+		stack_a = parse_data(argc, argv);
+		if (!stack_a)
+			return (-1);
+		if 
 	}
-	pile.size_b = 0;
-	while (++i < size)
-		pile.a[i] = push_swap_atoi(av[i], pile.a);
-	check_doubles(pile.a, size);
-	sort(&pile, size);
-	free(pile.a);
-	free(pile.b);
-}
-
-int	main(int ac, char **av)
-{
-	if (ac > 1)
-	{
-		av++;
-		if (ac == 2)
-			av = ft_split(*av, ' ');
-		push_swap(av);
-		return (0);
-	}
-	return (0);
 }
