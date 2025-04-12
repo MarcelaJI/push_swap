@@ -3,7 +3,9 @@
 void    free_stack(t_stack *stack)
 {
     t_stack *temp;
-
+    
+    if (!stack)
+        return ;
     temp = stack;
     while (temp)
     {
