@@ -9,7 +9,9 @@ int		main(int argc, char **argv)
 		return (0);
 	if (!parse_data(argc, &argv))
 	{
+		ft_putstr_fd(RED, 2);
 		ft_putstr_fd("Error\n", 2);
+		ft_putstr_fd(RESET, 2);
 		return (-1);
 	}
 	if (ft_is_sorted(stack_a))
