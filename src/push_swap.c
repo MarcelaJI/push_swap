@@ -12,12 +12,12 @@ int		main(int argc, char **argv)
 		ft_putstr_fd("Error\n", 2);
 		return (-1);
 	}
-	if (is_sorted(stack_a))
+	if (ft_is_sorted(stack_a))
 	{
 		free_stack(stack_a);
 		return (0);
 	}
-	sorted(stack_a);
+	ft_sorted(stack_a);
 	free_stack(stack_a);
 	return (0);
 }
