@@ -21,8 +21,6 @@ int     validate_and_convert(char **argv)
     i = 1;
     while(argv[i])
     {
-        ft_printf("Analizando: %s\n", argv[i]);
-
         if(!ft_is_valid_number(argv[i]))
         {
             ft_puterror();
