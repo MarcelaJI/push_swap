@@ -33,3 +33,19 @@ int     ft_is_valid_number(char *str)
     }
     return (1);
 }
+
+int     ft_is_duplicate(t_stack *stack, int value)
+{
+    t_stack *temp; // utilizo un puntero temporal para recorrer sin modificar el original, y así no pierdo referencia al primer nodo.
+
+    if (!stack)
+        return (0);
+    temp = stack;
+    while (temp)
+    {
+        if (temp->content == value) // comparo el nodo actual con el número que me pasan, si son iguales hay un duplicado
+            return (1);
+        temp = temp->next;
+    }
+    return (0);
+}
