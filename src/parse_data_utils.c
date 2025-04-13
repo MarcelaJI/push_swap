@@ -1,30 +1,18 @@
 #include "../include/push_swap.h"
 
-int     ft_isdigit(int c)
-{
-    if (c >= '0' && c <= '9')
-        return (1);
-    return (0);
-}
-
 int     ft_is_valid_number(char *str)
 {
     int  i;
 
     i = 0;
     if (str == NULL)
-    {
-        ft_printf("The string is empty");
         return (0);
-    }
     if (str[i] == '-' || str[i] == '+')
     {
         i++;
         if (str[i] == '\0')
             return (0);
     }
-    if (!ft_isdigit(str[i]))
-        return (0);
     while (str[i])
     {
         if(!ft_isdigit(str[i]))
@@ -34,18 +22,33 @@ int     ft_is_valid_number(char *str)
     return (1);
 }
 
-int     ft_is_duplicate(t_stack *stack, int value)
+int validate_input(char **argv)
 {
-    t_stack *temp; // utilizo un puntero temporal para recorrer sin modificar el original, y así no pierdo referencia al primer nodo.
+    int i;
+    int result;
 
-    if (!stack)
-        return (0);
-    temp = stack;
-    while (temp)
+    i = 1;
+    while (argv[i])
     {
-        if (temp->content == value) // comparo el nodo actual con el número que me pasan, si son iguales hay un duplicado
-            return (1);
-        temp = temp->next;
+        result = ft_is_valid_number(argv[i]);
+        if (result == 0)
+            return (EXIT_FAILURE);
+        i++;
     }
-    return (0);
+    return (EXIT_SUCCESS);
+}
+t_stack *parse_data(int argc, char **argv)
+{
+    t_stack *stack;
+
+    stack = NULL;
+    (void)argc;
+    int result;
+
+    result = validate_input(argv);
+    if (result == EXIT_SUCCESS)
+        ft_printf("everything's fine\n");
+    else
+        ft_printf("Hubo un error en la validación\n");
+    return (stack);
 }

@@ -6,14 +6,11 @@ LIBFT_A		= $(LIBFT_DIR)/libft.a
 PRINTF		= ft_printf
 PRINF_A		= $(PRINTF)/libftprintf.a
 
-SRC		= src/instructions_1.c \
-			src/instructions_2.c \
-			src/instructions_3.c \
-			src/instructions_4.c \
-			src/utils.c \
+SRC		= src/parse_data_utils.c \
+			src/parse_data.c \
 			src/push_swap.c \
-			src/quick_sort.c \
-			src/sort.c
+			src/parse_data_utils_2.c \
+			src/perror.c 
 
 MAKEFLAGS += --no-print-directory
 

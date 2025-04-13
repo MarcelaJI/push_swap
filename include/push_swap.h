@@ -8,6 +8,7 @@
 # include <stdlib.h>
 # include <stddef.h> 
 # include <unistd.h>
+#include <limits.h>
 
 # define RED "\033[31m"
 # define GREEN "\033[32m"
@@ -38,9 +39,12 @@ typedef struct s_state
 	int				size_b; // size de stack b
 }	t_state;
 
+void    ft_puterror(void);
+t_stack *parse_data(int argc, char **argv);
+int validate_input(char **argv);
+int     ft_is_valid_number(char *str);
+int     validate_and_convert(char **argv);
+int     validate_limits(char *str);
 
-// free
-
-void    free_str_arr(char **arr);
 
 #endif
