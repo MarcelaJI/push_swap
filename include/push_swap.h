@@ -50,6 +50,8 @@ int     validate_and_convert(char **argv);
 int     validate_limits(char *str);
 int     *init_array_from_args(char **argv, int *size);
 int     fill_array_from_args(char **argv, int *arr);
+t_stack *create_stack_node(int value);
+void append_stack_node(t_stack **stack, t_stack *new_node);
 
 
 
