@@ -39,12 +39,18 @@ typedef struct s_state
 	int				size_b; // size de stack b
 }	t_state;
 
+//errores
 void    ft_puterror(void);
-t_stack *parse_data(int argc, char **argv);
-int validate_input(char **argv);
+
+// parseo
+t_stack 	*parse_data(int argc, char **argv);
+int 	validate_input(char **argv);
 int     ft_is_valid_number(char *str);
 int     validate_and_convert(char **argv);
 int     validate_limits(char *str);
+int     *init_array_from_args(char **argv, int *size);
+int     fill_array_from_args(char **argv, int *arr);
+
 
 
 #endif
