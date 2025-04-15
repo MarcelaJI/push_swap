@@ -47,6 +47,7 @@ int     fill_array_from_args(char **argv, int *arr)
             return (EXIT_FAILURE);
         }
         arr[index] = (int)number;
+        ft_printf("Convertido: %d\n", arr[index]);
         index++;
         i++;
     }
