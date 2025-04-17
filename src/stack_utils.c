@@ -6,7 +6,7 @@
 /*   By: ingjimen <ingjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 09:55:42 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/17 12:18:36 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/17 12:44:35 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,10 @@ t_stack	*array_to_stack(int *arr, int size)
 	t_stack	*stack;
 	t_stack	*node;
 
-	i = 0;
 	stack = NULL;
 	if (size == 0 || arr == NULL)
 		return (NULL);
+	i = 0;
 	while (i < size)
 	{
 		node = create_stack_node(arr[i]);
@@ -76,6 +76,10 @@ void	print_stack(t_stack *stack)
 {
 	while (stack)
 	{
+		ft_printf("Nodo: %d\n", stack->content);
+		ft_printf("Índex: %d\n", stack->index);
+		ft_printf("Prev: %p\n", stack->prev);
+		ft_printf("Next: %p\n", stack->next);
 		stack = stack->next;
 	}
 }

@@ -9,9 +9,7 @@ t_stack     *parse_data(char **argv)
     size = 0;
     arr = init_array_from_args(argv, &size);
     if (!arr)
-    {
         return (NULL);
-    }
     if (fill_array_from_args(argv, arr) == EXIT_FAILURE)
     {
         free(arr);
