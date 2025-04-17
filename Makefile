@@ -6,7 +6,7 @@ LIBFT_A		= $(LIBFT_DIR)/libft.a
 PRINTF		= ft_printf
 PRINF_A		= $(PRINTF)/libftprintf.a
 
-SRC		= src/parse_data_utils.c \
+SRC		= src/validator.c \
 			src/parse_data.c \
 			src/push_swap.c \
 			src/parse_data_utils_2.c \
