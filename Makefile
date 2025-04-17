@@ -9,7 +9,7 @@ PRINF_A		= $(PRINTF)/libftprintf.a
 SRC		= src/validator.c \
 			src/parse_data.c \
 			src/push_swap.c \
-			src/parse_data_utils_2.c \
+			src/array_utils.c \
 			src/stack_utils.c \
 			src/free_stack.c \
 			src/ft_puterror.c 

@@ -35,20 +35,14 @@ int     fill_array_from_args(char **argv, int *arr)
     index = 0;
     while (argv[i])
     {
-        if (!ft_is_valid_number(argv[i]))
-        {
-            ft_puterror();
-            return (EXIT_FAILURE);
-        }
         number = ft_atol(argv[i]);
         if (number < INT_MIN || number > INT_MAX)
         {
             ft_puterror();
             return (EXIT_FAILURE);
         }
-        arr[index] = (int)number;
-        index++;
-        i++;
+        arr[index++] = (int)number;
+        i++;  
     }
     return (EXIT_SUCCESS);
 }
