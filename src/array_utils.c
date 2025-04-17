@@ -41,7 +41,7 @@ int     fill_array_from_args(char **argv, int *arr)
             ft_puterror();
             return (EXIT_FAILURE);
         }
-        arr[index++] = (int)number;
+        arr[index++] = (int)number; // lo guardamos en el array :)
         i++;  
     }
     return (EXIT_SUCCESS);
