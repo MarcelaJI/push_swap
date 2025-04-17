@@ -6,7 +6,7 @@
 /*   By: ingjimen <ingjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 09:55:42 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/17 12:16:37 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/17 12:18:36 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ void	print_stack(t_stack *stack)
 {
 	while (stack)
 	{
-		ft_printf("Nodo: %d\n", stack->content);
 		stack = stack->next;
 	}
 }
