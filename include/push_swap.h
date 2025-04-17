@@ -47,7 +47,6 @@ void	free_stack(t_stack **stack);
 
 // parseo
 t_stack	*parse_data(char **argv);
-int		validate_input(char **argv);
 int		ft_is_valid_number(char *str);
 int		validate_and_convert(char **argv);
 int		validate_limits(char *str);
@@ -56,5 +55,7 @@ int		fill_array_from_args(char **argv, int *arr);
 t_stack	*create_stack_node(int value);
 void	append_stack_node(t_stack **stack, t_stack *new_node);
 t_stack	*array_to_stack(int *arr, int size);
+void	print_test_node(t_stack *stack_a);
+void	print_stack_reverse(t_stack *stack);
 
 #endif

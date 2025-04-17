@@ -9,7 +9,9 @@ int		main(int argc, char **argv)
 	stack_a = parse_data(argv);
 	if (!stack_a)
 		return (EXIT_FAILURE);
-	print_stack(stack_a);
+	//print_stack(stack_a);
+	//print_test_node(stack_a);
+	print_stack_reverse(stack_a);
 	free_stack(&stack_a);
 	return (EXIT_SUCCESS);
 }
