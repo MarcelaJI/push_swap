@@ -1,5 +1,41 @@
 #include "../include/push_swap.h"
 
+int     validate_limits(char *str)
+{
+    long    min;
+    long    max;
+    long    result;
+
+    min = INT_MIN;
+    max = INT_MAX;
+    result = ft_atol(str);
+    if (result < min || result > max)
+        return (EXIT_FAILURE);
+    return (EXIT_SUCCESS);
+}
+
+int     validate_and_convert(char **argv)
+{
+    int i;
+
+    i = 1;
+    while(argv[i])
+    {
+        if(!ft_is_valid_number(argv[i]))
+        {
+            ft_puterror();
+            return (EXIT_FAILURE);
+        }
+        if(validate_limits(argv[i]) == EXIT_FAILURE)
+        {
+            ft_puterror();
+            return (EXIT_FAILURE);
+        }
+        i++;
+    }
+    return (EXIT_SUCCESS);
+}
+
 int     ft_is_valid_number(char *str)
 {
     int  i;
@@ -36,19 +72,4 @@ int validate_input(char **argv)
         i++;
     }
     return (EXIT_SUCCESS);
-}
-t_stack *parse_data(int argc, char **argv)
-{
-    t_stack *stack;
-
-    stack = NULL;
-    (void)argc;
-    int result;
-
-    result = validate_input(argv);
-    if (result == EXIT_SUCCESS)
-        ft_printf("everything's fine\n");
-    else
-        ft_printf("Hubo un error en la validación\n");
-    return (stack);
 }

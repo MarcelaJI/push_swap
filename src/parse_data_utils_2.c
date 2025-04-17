@@ -1,36 +1,53 @@
 #include "../include/push_swap.h"
 
-int     validate_limits(char *str)
+// Cuento argumentos y reservo memoria para mi array
+int     *init_array_from_args(char **argv, int *size)
 {
-    long    min;
-    long    max;
-    long    result;
-
-    min = INT_MIN;
-    max = INT_MAX;
-    result = ft_atol(str);
-    if (result < min || result > max)
-        return (EXIT_FAILURE);
-    return (EXIT_SUCCESS);
-}
-
-int     validate_and_convert(char **argv)
-{
-    int i;
+    int     i;
+    int     count;
+    int    *arr;
 
     i = 1;
-    while(argv[i])
+    count = 0;
+    while (argv[i])
     {
-        if(!ft_is_valid_number(argv[i]))
+        count++;
+        i++;
+    }
+    *size = count;
+    arr = malloc(count * sizeof(int)); // esto se interpreta como un array de enteros
+    if (!arr)
+    {
+        ft_puterror();
+        return (NULL);
+    }
+    return (arr);
+}
+
+// valido, convierto y lleno el array con los valores numéricos
+int     fill_array_from_args(char **argv, int *arr)
+{
+    int     i;
+    int     index;
+    int     number;
+
+    i = 1;
+    index = 0;
+    while (argv[i])
+    {
+        if (!ft_is_valid_number(argv[i]))
         {
             ft_puterror();
             return (EXIT_FAILURE);
         }
-        if(validate_limits(argv[i]) == EXIT_FAILURE)
+        number = ft_atol(argv[i]);
+        if (number < INT_MIN || number > INT_MAX)
         {
             ft_puterror();
             return (EXIT_FAILURE);
         }
+        arr[index] = (int)number;
+        index++;
         i++;
     }
     return (EXIT_SUCCESS);

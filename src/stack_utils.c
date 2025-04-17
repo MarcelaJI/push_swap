@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ingjimen <ingjimen@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ingjimen <ingjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 09:55:42 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/15 13:22:38 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/17 12:16:37 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,7 @@ t_stack	*array_to_stack(int *arr, int size)
 		return (NULL);
 	while (i < size)
 	{
-		ft_printf("array[%d] = %d\n", i, arr[i]);
 		node = create_stack_node(arr[i]);
-		ft_printf("Creando nodo con: %d\n", arr[i]);
 		if (!node)
 		{
 			free_stack(&stack);

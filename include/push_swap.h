@@ -46,7 +46,7 @@ void	print_stack(t_stack *stack);
 void	free_stack(t_stack **stack);
 
 // parseo
-t_stack	*parse_data(int argc, char **argv);
+t_stack	*parse_data(char **argv);
 int		validate_input(char **argv);
 int		ft_is_valid_number(char *str);
 int		validate_and_convert(char **argv);

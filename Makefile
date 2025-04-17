@@ -10,10 +10,9 @@ SRC		= src/parse_data_utils.c \
 			src/parse_data.c \
 			src/push_swap.c \
 			src/parse_data_utils_2.c \
-			src/parse_data_utils_3.c \
 			src/stack_utils.c \
 			src/free_stack.c \
-			src/perror.c 
+			src/ft_puterror.c 
 
 MAKEFLAGS += --no-print-directory
 
