@@ -1,19 +1,5 @@
 #include "../include/push_swap.h"
 
-int     validate_limits(char *str)
-{
-    long    min;
-    long    max;
-    long    result;
-
-    min = INT_MIN;
-    max = INT_MAX;
-    result = ft_atol(str);
-    if (result < min || result > max)
-        return (EXIT_FAILURE);
-    return (EXIT_SUCCESS);
-}
-
 int     validate_and_convert(char **argv)
 {
     int i;
@@ -58,18 +44,19 @@ int     ft_is_valid_number(char *str)
     return (1);
 }
 
-int validate_input(char **argv)
+int     validate_limits(char *str)
 {
-    int i;
-    int result;
+    long    min;
+    long    max;
+    long    result;
 
-    i = 1;
-    while (argv[i])
-    {
-        result = ft_is_valid_number(argv[i]);
-        if (result == 0)
-            return (EXIT_FAILURE);
-        i++;
-    }
+    min = INT_MIN;
+    max = INT_MAX;
+    result = ft_atol(str);
+    if (result < min || result > max)
+        return (EXIT_FAILURE);
     return (EXIT_SUCCESS);
 }
+
+
+
