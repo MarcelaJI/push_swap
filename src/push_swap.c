@@ -8,10 +8,17 @@ int		main(int argc, char **argv)
 		return (0);
 	stack_a = parse_data(argv);
 	if (!stack_a)
+	{
+		ft_printf("Error en el stack_a\n");
 		return (EXIT_FAILURE);
-	//print_stack(stack_a);
-	//print_test_node(stack_a);
-	print_stack_reverse(stack_a);
+	}
+	if (ft_is_sorted(stack_a))
+	{
+		ft_printf("La lista está ordenada\n");
+		free_stack(&stack_a);
+		return (EXIT_SUCCESS);
+	}
+	ft_printf("La lista NO está ordenada\n");
 	free_stack(&stack_a);
 	return (EXIT_SUCCESS);
 }

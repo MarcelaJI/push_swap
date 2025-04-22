@@ -6,7 +6,7 @@
 /*   By: ingjimen <ingjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 09:55:42 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/22 09:07:05 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/22 09:35:03 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,27 @@ void	print_stack(t_stack *stack)
 		ft_printf("Prev: %p\n", stack->prev);
 		ft_printf("Next: %p\n", stack->next);
 		stack = stack->next;
+	}
+}
+// establecer índice
+void	set_index(t_stack *stack)
+{
+	int		counter;
+	t_stack		*current;
+	t_stack		*compared;
+
+	current = stack;
+	while (current)
+	{
+		counter = 0;
+		compared = stack;
+		while (compared)
+		{
+			if (compared->content < current->content)
+				counter++;
+			compared = compared->next;
+		}
+		current->index = counter;
+		current = current->next;
 	}
 }

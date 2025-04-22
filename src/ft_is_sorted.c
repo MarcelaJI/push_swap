@@ -6,7 +6,7 @@ int     ft_is_sorted(t_stack *stack)
     while (stack && stack->next)
     {
         if (stack->content > stack->next->content)
-            return (0);
+            return (0); // No está ordenada
         stack = stack->next;
     }
     return (1);
