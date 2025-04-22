@@ -22,3 +22,24 @@ void    ft_sa(t_state *state)
     ft_printf("sa\n");
 }
 
+void    ft_pb(t_state *state)
+{
+
+    t_stack     *node_to_move; //variable temporal
+
+    if (!state->stack_a)
+        return ;
+    node_to_move = state->stack_a; // guardo el nodo al mover
+    state->stack_a = node_to_move->next; // actualizo A al siguiente
+    if (state->stack_a)
+        state->stack_a->prev = NULL;
+    node_to_move->next = state->stack_b; // conecto con B
+    if (state->stack_b)
+        state->stack_b->prev = node_to_move;
+    state->stack_b = node_to_move; // B apunta al nuevo nodo
+    node_to_move->prev = NULL;
+    state->size_a--;
+    state->size_b++;
+    ft_printf("pb\n");
+}
+
