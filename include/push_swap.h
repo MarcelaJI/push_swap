@@ -60,5 +60,6 @@ void	set_index(t_stack *stack);
 void    ft_sa(t_state *state);
 void    ft_pb(t_state *state);
 void    ft_ra(t_state *state);
+void     ft_rra(t_state *state);
 
 #endif
