@@ -83,3 +83,23 @@ void     ft_rra(t_state *state)
     ft_printf("rra\n");
 }
 
+void    ft_pa(t_state *state)
+{
+    t_stack *node_to_move;
+
+    if (!state->stack_b)
+        return ;
+    
+    node_to_move = state->stack_b;
+    state->stack_b = node_to_move->next;
+    if (state->stack_b)
+        state->stack_b->prev = NULL;
+    node_to_move->next = state->stack_a;
+    if (state->stack_a)
+        state->stack_a->prev = node_to_move;
+    state->stack_a = node_to_move;
+    node_to_move->prev = NULL;
+    state->size_a++;
+    state->size_b--;
+    ft_printf("pa\n");
+}
