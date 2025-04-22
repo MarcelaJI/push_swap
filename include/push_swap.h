@@ -62,5 +62,6 @@ void    ft_pb(t_state *state);
 void    ft_ra(t_state *state);
 void     ft_rra(t_state *state);
 void    ft_pa(t_state *state);
+void    ft_sb(t_state *state);
 
 #endif
