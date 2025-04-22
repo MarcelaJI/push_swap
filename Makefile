@@ -12,6 +12,7 @@ SRC		= src/validator.c \
 			src/array_utils.c \
 			src/stack_utils.c \
 			src/free_stack.c \
+			src/ft_is_sorted.c \
 			src/ft_puterror.c 
 
 MAKEFLAGS += --no-print-directory
