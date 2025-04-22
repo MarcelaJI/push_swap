@@ -16,6 +16,7 @@ SRC		= src/validator.c \
 			src/moves.c \
 			src/moves_2.c \
 			src/combined_moves.c \
+			src/algorithm_utils.c \
 			src/ft_puterror.c 
 
 MAKEFLAGS += --no-print-directory
