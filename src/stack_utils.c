@@ -6,7 +6,7 @@
 /*   By: ingjimen <ingjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 09:55:42 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/17 13:52:35 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/22 09:07:05 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,35 +81,5 @@ void	print_stack(t_stack *stack)
 		ft_printf("Prev: %p\n", stack->prev);
 		ft_printf("Next: %p\n", stack->next);
 		stack = stack->next;
-	}
-}
-
-void	print_test_node(t_stack *stack_a)
-{
-	t_stack *a;
-	t_stack *b;
-	t_stack *c;
-	
-	a = create_stack_node(5);
-	b = create_stack_node(20);
-	c = create_stack_node(25);
-
-	append_stack_node(&stack_a, a);
-	append_stack_node(&stack_a, b);
-	append_stack_node(&stack_a, c);
-	
-	print_stack(stack_a);
-}
-
-void	print_stack_reverse(t_stack *stack)
-{
-	while (stack && stack->next)
-	{
-		stack = stack->next;
-	}
-	while (stack)
-	{
-		ft_printf("Reverse: %d\n", stack->content);
-		stack = stack->prev;
 	}
 }
