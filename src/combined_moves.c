@@ -26,4 +26,31 @@ void	ft_ss(t_state *state)
 	ft_printf("ss\n");
 }
 
+static void	rotate_stack(t_stack **stack)
+{
+	t_stack	*temp;
+	t_stack	*last_node;
+
+	temp = *stack;
+	*stack = (*stack)->next;
+	(*stack)->prev = NULL;
+
+	last_node = *stack;
+	while (last_node->next)
+		last_node = last_node->next;
+	last_node->next = temp;
+	temp->prev = last_node;
+	temp->next = NULL;
+}
+
+void	ft_rr(t_state *state)
+{
+	if (state->stack_a && state->stack_a->next)
+		rotate_stack(&state->stack_a);
+	if (state->stack_b && state->stack_b->next)
+		rotate_stack(&state->stack_b);
+	ft_printf("rr\n");
+}
+
+
 
