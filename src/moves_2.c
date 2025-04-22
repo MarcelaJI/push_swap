@@ -39,3 +39,24 @@ void    ft_rb(t_state *state)
     temp->next = NULL;
     ft_printf("rb\n");
 }
+
+void    ft_rrb(t_state *state)
+{
+    t_stack *last;
+    t_stack *second_last;
+
+    if (!state->stack_b || !state->stack_b->next)
+        return ;
+    last = state->stack_b;
+    while (last->next)
+    {
+        second_last = last;
+        last = last->next;
+    }
+    second_last->next = NULL;
+    last->next = state->stack_b;
+    state->stack_b->prev = last;
+    state->stack_b = last;
+    last->prev = NULL;
+    ft_printf("rrb\n");
+}
