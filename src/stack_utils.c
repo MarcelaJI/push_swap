@@ -6,7 +6,7 @@
 /*   By: ingjimen <ingjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 09:55:42 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/22 09:35:03 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/22 09:50:01 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,10 @@ void	print_stack(t_stack *stack)
 {
 	while (stack)
 	{
-		ft_printf("Nodo: %d\n", stack->content);
+		ft_printf("Nodo: %d\n", stack->content); 
 		ft_printf("Índex: %d\n", stack->index);
-		ft_printf("Prev: %p\n", stack->prev);
-		ft_printf("Next: %p\n", stack->next);
+		//ft_printf("Prev: %p\n", stack->prev);
+		//ft_printf("Next: %p\n", stack->next);
 		stack = stack->next;
 	}
 }
@@ -97,7 +97,7 @@ void	set_index(t_stack *stack)
 		compared = stack;
 		while (compared)
 		{
-			if (compared->content < current->content)
+			if (compared->content < current->content) // por cada nodo , cuenta cuántos nodos tienen un valor menor que él
 				counter++;
 			compared = compared->next;
 		}

@@ -14,11 +14,11 @@ int		main(int argc, char **argv)
 	}
 	if (ft_is_sorted(stack_a))
 	{
-		ft_printf("La lista está ordenada\n");
 		free_stack(&stack_a);
 		return (EXIT_SUCCESS);
 	}
-	ft_printf("La lista NO está ordenada\n");
+	set_index(stack_a);
+	print_stack(stack_a);
 	free_stack(&stack_a);
 	return (EXIT_SUCCESS);
 }
