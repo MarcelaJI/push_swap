@@ -62,3 +62,24 @@ void    ft_ra(t_state *state)
     ft_printf("ra\n");
 }
 
+void     ft_rra(t_state *state)
+{
+    t_stack *last;
+    t_stack *second_last;
+
+    if (!state->stack_a || !state->stack_a->next)
+        return ;
+    last = state->stack_a;
+    while (last->next)
+    {
+        second_last = last;
+        last = last->next;
+    }
+    second_last->next = NULL;
+    last->next = state->stack_a;
+    state->stack_a->prev = last;
+    state->stack_a = last;
+    last->prev = NULL;
+    ft_printf("rra\n");
+}
+
