@@ -89,7 +89,6 @@ void    ft_pa(t_state *state)
 
     if (!state->stack_b)
         return ;
-    
     node_to_move = state->stack_b;
     state->stack_b = node_to_move->next;
     if (state->stack_b)

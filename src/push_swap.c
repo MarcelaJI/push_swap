@@ -17,13 +17,13 @@ int	main(int argc, char **argv)
 	state.size_b = 0;
 	ft_pb(&state);
 	ft_pb(&state);
-	ft_printf("Antes de rr:\n");
+	ft_printf("Antes de rrr:\n");
 	ft_printf("Stack A:\n");
 	print_stack(state.stack_a);
 	ft_printf("Stack B:\n");
 	print_stack(state.stack_b);
-	ft_rr(&state);
-	ft_printf("Después de rr:\n");
+	ft_rrr(&state);
+	ft_printf("Después de rrr:\n");
 	ft_printf("Stack A:\n");
 	print_stack(state.stack_a);
 	ft_printf("Stack B:\n");
@@ -32,6 +32,7 @@ int	main(int argc, char **argv)
 	free_stack(&state.stack_b);
 	return (EXIT_SUCCESS);
 }
+
 
 
 
