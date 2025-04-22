@@ -58,5 +58,6 @@ t_stack	*array_to_stack(int *arr, int size);
 int     ft_is_sorted(t_stack *stack);
 void	set_index(t_stack *stack);
 void    ft_sa(t_state *state);
+void    ft_pb(t_state *state);
 
 #endif
