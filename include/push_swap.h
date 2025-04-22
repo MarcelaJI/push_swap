@@ -57,5 +57,6 @@ void	append_stack_node(t_stack **stack, t_stack *new_node);
 t_stack	*array_to_stack(int *arr, int size);
 int     ft_is_sorted(t_stack *stack);
 void	set_index(t_stack *stack);
+void    ft_sa(t_state *state);
 
 #endif
