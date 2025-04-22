@@ -18,10 +18,10 @@ int	main(int argc, char **argv)
 	state.size_a = argc - 1;
 	state.size_b = 0;
 
-	ft_printf("Antes de pb:\n");
+	ft_printf("Antes de ra:\n");
 	print_stack(state.stack_a);
-	ft_pb(&state);
-	ft_printf("Después de pb:\n");
+	ft_ra(&state);
+	ft_printf("Después de ra:\n");
 	ft_printf("Stack A:\n");
 	print_stack(state.stack_a);
 	ft_printf("Stack B:\n");
