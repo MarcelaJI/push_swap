@@ -43,3 +43,22 @@ void    ft_pb(t_state *state)
     ft_printf("pb\n");
 }
 
+void    ft_ra(t_state *state)
+{
+    t_stack *temp;
+    t_stack *last_node;
+
+    if (!state->stack_a || !state->stack_a->next)
+        return ;
+    temp = state->stack_a;
+    state->stack_a = state->stack_a->next;
+    state->stack_a->prev = NULL;
+    last_node = state->stack_a;
+    while (last_node->next)
+        last_node = last_node->next;
+    last_node->next = temp;
+    temp->prev = last_node;
+    temp->next = NULL;
+    ft_printf("ra\n");
+}
+
