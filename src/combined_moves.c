@@ -9,11 +9,9 @@ static void	swap_top_two(t_stack *stack)
 
 	first = stack;
 	second = stack->next;
-
 	temp = first->content;
 	first->content = second->content;
 	second->content = temp;
-
 	temp = first->index;
 	first->index = second->index;
 	second->index = temp;
