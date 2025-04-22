@@ -20,3 +20,22 @@ void    ft_sb(t_state *state)
     second->index = temp;
     ft_printf("sb\n");
 }
+
+void    ft_rb(t_state *state)
+{
+    t_stack *temp;
+    t_stack *last_node;
+
+    if (!state->stack_b || !state->stack_b->next)
+        return ;
+    temp = state->stack_b;
+    state->stack_b = state->stack_b->next;
+    state->stack_b->prev = NULL;
+    last_node = state->stack_b;
+    while (last_node->next)
+        last_node = last_node->next;
+    last_node->next = temp;
+    temp->prev = last_node;
+    temp->next = NULL;
+    ft_printf("rb\n");
+}
