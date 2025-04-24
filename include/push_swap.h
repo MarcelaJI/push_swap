@@ -75,5 +75,6 @@ void	set_cheapest_node(t_state *state);
 void	move_stack_a_to_top(t_state *state, t_stack *node);
 void	move_stack_b_to_top(t_state *state, t_stack *node);
 void	execute_cheapest_move(t_state *state);
+void	push_all_but_three(t_state *state);
 
 #endif
