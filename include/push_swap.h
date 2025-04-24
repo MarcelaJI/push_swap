@@ -69,5 +69,6 @@ void	ft_ss(t_state *state);
 void	ft_rr(t_state *state);
 void	ft_rrr(t_state *state);
 void	set_target_node(t_state *state);
+void	print_target_nodes(t_stack *stack);
 
 #endif

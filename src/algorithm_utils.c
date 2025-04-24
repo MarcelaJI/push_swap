@@ -55,4 +55,19 @@ void	set_target_node(t_state *state)
 	}
 }
 
+void	print_target_nodes(t_stack *stack_a)
+{
+
+	while (stack_a)
+	{
+		if (stack_a->target_node)
+			ft_printf("Nodo A: %d -> Target B: %d: %d\n",
+				stack_a->content, stack_a->target_node->content);
+		else
+			ft_printf("Nodo A: %d -> Target b: (null)\n",
+				stack_a->content);
+		stack_a = stack_a->next;
+	}
+}
+
 

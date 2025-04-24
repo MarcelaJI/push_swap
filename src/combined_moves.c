@@ -82,3 +82,4 @@ void	ft_rrr(t_state *state)
 
 
 
+
