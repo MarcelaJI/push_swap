@@ -6,7 +6,7 @@
 /*   By: ingjimen <ingjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 09:55:42 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/22 09:50:01 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/24 12:07:58 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void	print_stack(t_stack *stack)
 	{
 		ft_printf("Nodo: %d\n", stack->content); 
 		ft_printf("Índex: %d\n", stack->index);
+		ft_printf("Above median? %d\n", stack->is_above_median);
 		//ft_printf("Prev: %p\n", stack->prev);
 		//ft_printf("Next: %p\n", stack->next);
 		stack = stack->next;
