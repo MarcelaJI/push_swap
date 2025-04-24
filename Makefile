@@ -19,6 +19,7 @@ SRC		= src/validator.c \
 			src/algorithm_utils.c \
 			src/algorithm_utils_2.c \
 			src/push_to_b.c \
+			src/sort_utils.c \
 			src/ft_puterror.c 
 
 MAKEFLAGS += --no-print-directory

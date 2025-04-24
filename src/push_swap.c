@@ -2,35 +2,34 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack *stack_a;
-	t_state state;
+	t_stack	*stack_a;
+	t_state	state;
 
-	if (argc < 2)
-		return (0);
-
+	if (argc != 4)
+		return (EXIT_FAILURE);
 	stack_a = parse_data(argv);
 	if (!stack_a)
 		return (EXIT_FAILURE);
 
 	set_index(stack_a);
+
 	state.stack_a = stack_a;
 	state.stack_b = NULL;
-	state.size_a = argc - 1;
+	state.size_a = 3;
 	state.size_b = 0;
-	ft_pb(&state);
-	ft_pb(&state);
-	//push_all_but_three(&state);
-	move_all_but_three(&state);
 
-	ft_printf("=== STACK A ===\n");
+	ft_printf("Antes de sort_three:\n");
 	print_stack(state.stack_a);
-	ft_printf("=== STACK B ===\n");
-	print_stack(state.stack_b);
+
+	sort_three(&state);
+
+	ft_printf("Después de sort_three:\n");
+	print_stack(state.stack_a);
 
 	free_stack(&state.stack_a);
-	free_stack(&state.stack_b);
 	return (EXIT_SUCCESS);
 }
+
 
 
 
