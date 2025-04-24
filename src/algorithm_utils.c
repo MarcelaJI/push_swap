@@ -55,19 +55,35 @@ void	set_target_node(t_state *state)
 	}
 }
 
-void	print_target_nodes(t_stack *stack_a)
-{
+// void	print_target_nodes(t_stack *stack_a)
+// {
 
-	while (stack_a)
+// 	while (stack_a)
+// 	{
+// 		if (stack_a->target_node)
+// 			ft_printf("Nodo A: %d -> Target B: %d: %d\n",
+// 				stack_a->content, stack_a->target_node->content);
+// 		else
+// 			ft_printf("Nodo A: %d -> Target b: (null)\n",
+// 				stack_a->content);
+// 		stack_a = stack_a->next;
+// 	}
+// }
+
+void	set_above_median(t_stack *stack, int size)
+{
+	int	median;
+	int	i;
+
+	median = size / 2;
+	i = 0;
+	while (stack)
 	{
-		if (stack_a->target_node)
-			ft_printf("Nodo A: %d -> Target B: %d: %d\n",
-				stack_a->content, stack_a->target_node->content);
+		if (i < median)
+			stack->is_above_median = 1;
 		else
-			ft_printf("Nodo A: %d -> Target b: (null)\n",
-				stack_a->content);
-		stack_a = stack_a->next;
+			stack->is_above_median = 0;
+		stack = stack->next;
+		i = i + 1;
 	}
 }
-
-
