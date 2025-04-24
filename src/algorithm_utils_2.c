@@ -30,9 +30,9 @@ void	set_cheapest_node(t_state *state)
 	current = state->stack_a;
 	best_cost = INT_MAX;
 	cheapest = NULL;
-
 	while (current)
 	{
+		current->is_cheapest = 0;
 		total_cost = calculate_costs(state, current);
 		if (total_cost < best_cost)
 		{
@@ -44,3 +44,4 @@ void	set_cheapest_node(t_state *state)
 	if (cheapest)
 		cheapest->is_cheapest = 1;
 }
+
