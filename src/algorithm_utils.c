@@ -87,3 +87,4 @@ void	set_above_median(t_stack *stack, int size)
 		i = i + 1;
 	}
 }
+

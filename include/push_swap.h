@@ -71,5 +71,6 @@ void	ft_rrr(t_state *state);
 void	set_target_node(t_state *state);
 //void	print_target_nodes(t_stack *stack);
 void	set_above_median(t_stack *stack, int size);
+void	set_cheapest_node(t_state *state);
 
 #endif
