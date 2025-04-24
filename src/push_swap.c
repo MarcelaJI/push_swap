@@ -2,16 +2,14 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack *stack_a;
-	t_state state;
+	t_stack	*stack_a;
+	t_state	state;
 
 	if (argc < 2)
 		return (0);
-
 	stack_a = parse_data(argv);
 	if (!stack_a)
 		return (EXIT_FAILURE);
-	set_index(stack_a);
 	state.stack_a = stack_a;
 	state.stack_b = NULL;
 	state.size_a = argc - 1;
@@ -24,14 +22,17 @@ int	main(int argc, char **argv)
 	set_above_median(state.stack_a, state.size_a);
 	set_above_median(state.stack_b, state.size_b);
 	set_cheapest_node(&state);
+	execute_cheapest_move(&state);
 	ft_printf("=== STACK A ===\n");
 	print_stack(state.stack_a);
 	ft_printf("=== STACK B ===\n");
 	print_stack(state.stack_b);
+
 	free_stack(&state.stack_a);
 	free_stack(&state.stack_b);
 	return (EXIT_SUCCESS);
 }
+
 
 
 

@@ -72,5 +72,8 @@ void	set_target_node(t_state *state);
 //void	print_target_nodes(t_stack *stack);
 void	set_above_median(t_stack *stack, int size);
 void	set_cheapest_node(t_state *state);
+void	move_stack_a_to_top(t_state *state, t_stack *node);
+void	move_stack_b_to_top(t_state *state, t_stack *node);
+void	execute_cheapest_move(t_state *state);
 
 #endif
