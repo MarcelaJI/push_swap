@@ -19,7 +19,9 @@ int	main(int argc, char **argv)
 	state.size_b = 0;
 	ft_pb(&state);
 	ft_pb(&state);
-	push_all_but_three(&state);
+	//push_all_but_three(&state);
+	move_all_but_three(&state);
+
 	ft_printf("=== STACK A ===\n");
 	print_stack(state.stack_a);
 	ft_printf("=== STACK B ===\n");
