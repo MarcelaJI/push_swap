@@ -2,25 +2,35 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack *stack_a;
-	int lowest_pos;
+	t_stack	*stack_a;
+	t_state	state;
 
 	if (argc < 2)
 		return (0);
+
 	stack_a = parse_data(argv);
 	if (!stack_a)
-	{
-		ft_putstr_fd("Error en el parseo\n", 2);
-		return (1);
-	}
+		return (EXIT_FAILURE);
+
 	set_index(stack_a);
-	ft_printf("=== STACK A ===\n");
-	print_stack(stack_a);
-	lowest_pos = find_lowest_index_position(stack_a);
-	ft_printf("\nPosición del índice más bajo: %d\n", lowest_pos);
-	free_stack(&stack_a);
-	return (0);
+	state.stack_a = stack_a;
+	state.stack_b = NULL;
+	state.size_a = argc - 1;
+	state.size_b = 0;
+
+	ft_printf("=== STACK A INICIAL ===\n");
+	print_stack(state.stack_a);
+
+	sort_small_stack(&state);
+
+	ft_printf("\n=== STACK A FINAL ===\n");
+	print_stack(state.stack_a);
+
+	free_stack(&state.stack_a);
+	free_stack(&state.stack_b);
+	return (EXIT_SUCCESS);
 }
+
 
 
 
