@@ -78,5 +78,8 @@ void	execute_cheapest_move(t_state *state);
 void	push_all_but_three(t_state *state);
 void	move_all_but_three(t_state *state);
 void	sort_three(t_state *state);
+void	sort_small_stack(t_state *state);
+int		find_lowest_index_position(t_stack *stack);
+
 
 #endif

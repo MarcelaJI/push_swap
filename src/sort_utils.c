@@ -29,3 +29,48 @@ void	sort_three(t_state *state)
 		ft_rra(state);
 	}
 }
+
+int		find_lowest_index_position(t_stack *stack)
+{
+	int		pos;
+	int		lowest_index;
+	int		lowest_pos;
+	t_stack	*temp;
+
+	pos = 0;
+	lowest_pos = 0;
+	lowest_index = INT_MAX;
+	temp = stack;
+	while (temp)
+	{
+		if (temp->index < lowest_index)
+		{
+			lowest_index = temp->index;
+			lowest_pos = pos;
+		}
+		pos++;
+		temp = temp->next;
+	}
+	return (lowest_pos);
+}
+
+void	sort_small_stack(t_state *state)
+{
+	int	pos;
+
+	while (state->size_a > 3)
+	{
+		pos = find_lowest_index_position(state->stack_a);
+		if (pos <= state->size_a / 2)
+			while (pos-- > 0)
+				ft_ra(state);
+		else
+			while (pos++ < state->size_a)
+				ft_rra(state);
+		ft_pb(state);
+	}
+	sort_three(state);
+	while (state->size_b > 0)
+		ft_pa(state);
+}
+
