@@ -11,7 +11,6 @@ void	sort_three(t_state *state)
 	first = state->stack_a->content;
 	second = state->stack_a->next->content;
 	third = state->stack_a->next->next->content;
-
 	if (first > second && second < third && first < third)
 		ft_sa(state);
 	else if (first > second && second > third)
@@ -29,6 +28,3 @@ void	sort_three(t_state *state)
 	else if (first < second && second > third && first > third)
 		ft_rra(state);
 }
-
-
-
