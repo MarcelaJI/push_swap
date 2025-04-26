@@ -23,37 +23,42 @@ static void finish_rotation(t_state *state)
 	}
 }
 
-void sort(t_stack *stack_a)
+static void	initialize_state(t_state *state, t_stack *stack_a)
 {
-	t_state state;
 	t_stack *tmp;
 
-	state.stack_a = stack_a;
-	state.stack_b = NULL;
-	state.size_a = 0;
-	state.size_b = 0;
+	state->stack_a = stack_a;
+	state->stack_b = NULL;
+	state->size_a = 0;
+	state->size_b = 0;
 	tmp = stack_a;
 	while (tmp)
 	{
-		state.size_a++;
+		state->size_a++;
 		tmp = tmp->next;
 	}
-	set_index(state.stack_a);
+	set_index(state->stack_a);
+}
 
+void	sort(t_stack *stack_a)
+{
+	t_state	state;
+
+	initialize_state(&state, stack_a);
 	if (state.size_a <= 2)
 	{
 		sort_small_stack(&state);
-		return;
+		return ;
 	}
 	else if (state.size_a == 3)
 	{
 		sort_three(&state);
-		return;
+		return ;
 	}
 	else if (state.size_a <= 5)
 	{
 		sort_small_stack(&state);
-		return;
+		return ;
 	}
 	push_all_except_three(&state);
 	sort_three(&state);
@@ -61,13 +66,3 @@ void sort(t_stack *stack_a)
 		reinsert_from_b(&state);
 	finish_rotation(&state);
 }
-
-
-
-
-
-
-
-
-
-

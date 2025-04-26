@@ -1,6 +1,6 @@
 NAME	= push_swap
 CC		= cc
-CFLAGS	= -Wall -Wextra -Werror -g
+CFLAGS	= -Wall -Wextra -Werror
 LIBFT_DIR	= Libft
 LIBFT_A		= $(LIBFT_DIR)/libft.a
 PRINTF		= ft_printf
