@@ -10,6 +10,7 @@ void	sort_small_stack(t_state *state)
 			ft_sa(state);
 		return ;
 	}
+
 	while (state->size_a > 3)
 	{
 		min_index = find_lowest_index_position(state->stack_a);
@@ -20,7 +21,9 @@ void	sort_small_stack(t_state *state)
 		else
 			ft_rra(state);
 	}
+
 	sort_three(state);
+
 	while (state->size_b > 0)
 		ft_pa(state);
 }
