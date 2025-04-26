@@ -23,10 +23,10 @@ static void finish_rotation(t_state *state)
 	}
 }
 
-void	sort(t_stack *stack_a)
+void sort(t_stack *stack_a)
 {
-	t_state	state;
-	t_stack	*tmp;
+	t_state state;
+	t_stack *tmp;
 
 	state.stack_a = stack_a;
 	state.stack_b = NULL;
@@ -39,24 +39,29 @@ void	sort(t_stack *stack_a)
 		tmp = tmp->next;
 	}
 	set_index(state.stack_a);
-	if (state.size_a <= 3)
+
+	if (state.size_a <= 2)
+	{
+		sort_small_stack(&state);
+		return;
+	}
+	else if (state.size_a == 3)
 	{
 		sort_three(&state);
-		return ;
+		return;
 	}
 	else if (state.size_a <= 5)
 	{
 		sort_small_stack(&state);
-		return ;
+		return;
 	}
 	push_all_except_three(&state);
 	sort_three(&state);
-
 	while (state.size_b > 0)
 		reinsert_from_b(&state);
-
 	finish_rotation(&state);
 }
+
 
 
 
