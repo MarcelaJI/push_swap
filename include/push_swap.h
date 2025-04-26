@@ -72,7 +72,6 @@ void	ft_rrr(t_state *state);
 
 /* 📚 Sort helpers */
 void	sort(t_stack *stack_a);
-void	finish_rotation(t_state *state);
 void	sort_three(t_state *state);
 void	push_all_except_three(t_state *state);
 void	sort_small_stack(t_state *state);

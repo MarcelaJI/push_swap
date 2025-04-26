@@ -1,9 +1,9 @@
 #include "../include/push_swap.h"
 
-void	finish_rotation(t_state *state)
+static void finish_rotation(t_state *state)
 {
-	int		lowest_pos;
-	int		size;
+	int	lowest_pos;
+	int	size;
 	t_stack	*stack;
 
 	stack = state->stack_a;
@@ -26,12 +26,13 @@ void	finish_rotation(t_state *state)
 void	sort(t_stack *stack_a)
 {
 	t_state	state;
+	t_stack	*tmp;
 
 	state.stack_a = stack_a;
 	state.stack_b = NULL;
 	state.size_a = 0;
 	state.size_b = 0;
-	t_stack *tmp = stack_a;
+	tmp = stack_a;
 	while (tmp)
 	{
 		state.size_a++;
@@ -50,10 +51,13 @@ void	sort(t_stack *stack_a)
 	}
 	push_all_except_three(&state);
 	sort_three(&state);
+
 	while (state.size_b > 0)
 		reinsert_from_b(&state);
+
 	finish_rotation(&state);
 }
+
 
 
 
