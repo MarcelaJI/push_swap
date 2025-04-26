@@ -35,8 +35,6 @@ void	ft_ss(t_state *state)
 	}
 }
 
-
-
 static void	rotate_stack(t_stack **stack)
 {
 	t_stack *temp;

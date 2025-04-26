@@ -28,6 +28,7 @@ SRC = src/array_utils.c \
 	  src/sort_three.c \
 	  src/sort_utils.c \
 	  src/stack_utils.c \
+	  src/ft_sort_int_tab.c \
 	  src/validator.c
 
 MAKEFLAGS += --no-print-directory

@@ -76,6 +76,8 @@ void	sort_three(t_state *state);
 void	push_all_except_three(t_state *state);
 void	sort_small_stack(t_state *state);
 void	ft_sort_int_tab(int *tab, int size);
+void	finish_rotation(t_state *state);
+
 
 /* 📚 Move helpers */
 void	set_target_nodes(t_state *state);
