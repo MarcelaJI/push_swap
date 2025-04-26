@@ -7,8 +7,7 @@ static t_stack	*get_cheapest_node(t_stack *stack)
 	cheapest = NULL;
 	while (stack)
 	{
-		if (stack->target_node
-			&& (!cheapest || stack->operation_cost < cheapest->operation_cost))
+		if (stack->target_node && (!cheapest || stack->operation_cost < cheapest->operation_cost))
 			cheapest = stack;
 		stack = stack->next;
 	}
@@ -24,6 +23,7 @@ void	reinsert_from_b(t_state *state)
 	set_above_median(state->stack_a, state->size_a);
 	set_above_median(state->stack_b, state->size_b);
 	set_target_nodes(state);
+	set_costs(state);
 
 	cheapest = get_cheapest_node(state->stack_b);
 	if (!cheapest || !cheapest->target_node)
@@ -33,4 +33,5 @@ void	reinsert_from_b(t_state *state)
 	move_stack_a_to_top(state, cheapest->target_node);
 	ft_pa(state);
 }
+
 
