@@ -1,23 +1,59 @@
 #include "../include/push_swap.h"
 
-static t_stack	*get_best_target(t_stack *a_node, t_stack *stack_b)
+void	ft_sort_int_tab(int *tab, int size)
+{
+	int	i;
+	int	tmp;
+	int	swapped;
+
+	if (!tab || size < 2)
+		return ;
+
+	swapped = 1;
+	while (swapped)
+	{
+		swapped = 0;
+		i = 0;
+		while (i < size - 1)
+		{
+			if (tab[i] > tab[i + 1])
+			{
+				tmp = tab[i];
+				tab[i] = tab[i + 1];
+				tab[i + 1] = tmp;
+				swapped = 1;
+			}
+			i++;
+		}
+	}
+}
+
+
+static t_stack	*find_best_target(t_stack *stack_a, int b_content)
 {
 	t_stack	*best_target;
-	long	best_diff;
-	long	current_diff;
+	t_stack	*current;
 
 	best_target = NULL;
-	best_diff = __LONG_MAX__;
-
-	while (stack_b)
+	current = stack_a;
+	while (current)
 	{
-		current_diff = (long)a_node->content - (long)stack_b->content;
-		if (current_diff > 0 && current_diff < best_diff)
+		if (current->content > b_content)
 		{
-			best_diff = current_diff;
-			best_target = stack_b;
+			if (!best_target || current->content < best_target->content)
+				best_target = current;
 		}
-		stack_b = stack_b->next;
+		current = current->next;
+	}
+	if (!best_target)
+	{
+		current = stack_a;
+		while (current)
+		{
+			if (!best_target || current->content < best_target->content)
+				best_target = current;
+			current = current->next;
+		}
 	}
 	return (best_target);
 }
@@ -25,16 +61,13 @@ static t_stack	*get_best_target(t_stack *a_node, t_stack *stack_b)
 void	set_target_nodes(t_state *state)
 {
 	t_stack	*b_node;
-	t_stack	*target;
 
 	b_node = state->stack_b;
 	while (b_node)
 	{
-		target = get_best_target(b_node, state->stack_a);
-		if (!target)
-			target = find_min_node(state->stack_a);
-		b_node->target_node = target;
+		b_node->target_node = find_best_target(state->stack_a, b_node->content);
 		b_node = b_node->next;
 	}
 }
+
 

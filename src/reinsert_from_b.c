@@ -18,20 +18,24 @@ void	reinsert_from_b(t_state *state)
 {
 	t_stack	*cheapest;
 
-	set_index(state->stack_a);
-	set_index(state->stack_b);
-	set_above_median(state->stack_a, state->size_a);
-	set_above_median(state->stack_b, state->size_b);
-	set_target_nodes(state);
-	set_costs(state);
+	while (state->size_b > 0)
+	{
+		set_index(state->stack_a);
+		set_index(state->stack_b);
+		set_above_median(state->stack_a, state->size_a);
+		set_above_median(state->stack_b, state->size_b);
+		set_target_nodes(state);
+		set_costs(state);
 
-	cheapest = get_cheapest_node(state->stack_b);
-	if (!cheapest || !cheapest->target_node)
-		return ;
+		cheapest = get_cheapest_node(state->stack_b);
+		if (!cheapest || !cheapest->target_node)
+			return ;
 
-	move_stack_b_to_top(state, cheapest);
-	move_stack_a_to_top(state, cheapest->target_node);
-	ft_pa(state);
+		move_stack_b_to_top(state, cheapest);
+		move_stack_a_to_top(state, cheapest->target_node);
+		ft_pa(state);
+	}
 }
+
 
 
