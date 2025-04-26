@@ -1,5 +1,3 @@
-#!/bin/bash
-
 echo -e "\n\033[1;34m🚀 Empezando tests automáticos para PUSH_SWAP...\033[0m"
 
 # Casos normales

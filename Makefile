@@ -1,6 +1,18 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ingjimen <ingjimen@student.42madrid.com    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/04/26 17:53:15 by ingjimen          #+#    #+#              #
+#    Updated: 2025/04/26 18:39:26 by ingjimen         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME	= push_swap
 CC		= cc
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -g
 LIBFT_DIR	= Libft
 LIBFT_A		= $(LIBFT_DIR)/libft.a
 PRINTF		= ft_printf
@@ -8,6 +20,7 @@ PRINF_A		= $(PRINTF)/libftprintf.a
 
 SRC = src/array_utils.c \
 	  src/combined_moves.c \
+	  src/combined_moves_2.c \
 	  src/find_cheapest_node.c \
 	  src/find_min_node.c \
 	  src/free_stack.c \

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ingjimen <ingjimen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ingjimen <ingjimen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 09:55:42 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/25 17:01:53 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/26 18:05:23 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,15 +76,13 @@ void	print_stack(t_stack *stack)
 {
 	while (stack)
 	{
-		ft_printf("Nodo: %d\n", stack->content); 
+		ft_printf("Nodo: %d\n", stack->content);
 		ft_printf("Índex: %d\n", stack->index);
 		ft_printf("Above median? %d\n", stack->is_above_median);
-		//ft_printf("Prev: %p\n", stack->prev);
-		//ft_printf("Next: %p\n", stack->next);
 		stack = stack->next;
 	}
 }
-// establecer índice
+
 void	set_index(t_stack *stack)
 {
 	int		i;

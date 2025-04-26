@@ -1,15 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_all_except_three.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ingjimen <ingjimen@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/26 17:49:29 by ingjimen          #+#    #+#             */
+/*   Updated: 2025/04/26 17:50:16 by ingjimen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
 void	push_all_except_three(t_state *state)
 {
-	int pushed;
-	int size;
-	int median;
+	int	pushed;
+	int	size;
+	int	median;
 
 	pushed = 0;
 	size = state->size_a;
 	median = size / 2;
-
 	while (size > 6 && pushed < median)
 	{
 		if (state->stack_a->content <= median)
@@ -21,11 +32,6 @@ void	push_all_except_three(t_state *state)
 			ft_ra(state);
 		size = state->size_a;
 	}
-
 	while (state->size_a > 3)
 		ft_pb(state);
 }
-
-
-
-

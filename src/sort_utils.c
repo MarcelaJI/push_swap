@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_utils.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ingjimen <ingjimen@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/26 17:51:21 by ingjimen          #+#    #+#             */
+/*   Updated: 2025/04/26 17:51:26 by ingjimen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
 void	set_median(t_stack *stack, int size)
@@ -21,9 +33,9 @@ void	set_median(t_stack *stack, int size)
 
 int	find_lowest_index_position(t_stack *stack)
 {
-	int	lowest_index;
-	int	position;
-	int	pos_counter;
+	int		lowest_index;
+	int		position;
+	int		pos_counter;
 	t_stack	*current;
 
 	current = stack;

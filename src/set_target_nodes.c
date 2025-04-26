@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   set_target_nodes.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ingjimen <ingjimen@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/26 17:50:59 by ingjimen          #+#    #+#             */
+/*   Updated: 2025/04/26 17:51:04 by ingjimen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
 static t_stack	*get_target(t_stack *b_node, t_stack *stack_a)
@@ -34,10 +46,3 @@ void	set_target_nodes(t_state *state)
 		b_node = b_node->next;
 	}
 }
-
-
-
-
-
-
-

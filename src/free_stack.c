@@ -6,7 +6,7 @@
 /*   By: ingjimen <ingjimen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 10:17:46 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/15 13:46:33 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/26 17:40:58 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	free_stack(t_stack **stack)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
-	if (stack == NULL || *stack == NULL)
+	if (!stack || !*stack)
 		return ;
 	while (*stack)
 	{
@@ -24,4 +24,15 @@ void	free_stack(t_stack **stack)
 		free(*stack);
 		*stack = temp;
 	}
+	*stack = NULL;
+}
+
+void	free_state(t_state **state)
+{
+	if (!state || !*state)
+		return ;
+	free_stack(&(*state)->stack_a);
+	free_stack(&(*state)->stack_b);
+	free(*state);
+	*state = NULL;
 }
