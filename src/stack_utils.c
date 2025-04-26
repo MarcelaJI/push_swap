@@ -6,7 +6,7 @@
 /*   By: ingjimen <ingjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 09:55:42 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/24 12:07:58 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/25 17:01:53 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,22 +87,14 @@ void	print_stack(t_stack *stack)
 // establecer índice
 void	set_index(t_stack *stack)
 {
-	int		counter;
-	t_stack		*current;
-	t_stack		*compared;
+	int		i;
+	t_stack	*current;
 
+	i = 0;
 	current = stack;
 	while (current)
 	{
-		counter = 0;
-		compared = stack;
-		while (compared)
-		{
-			if (compared->content < current->content) // por cada nodo , cuenta cuántos nodos tienen un valor menor que él
-				counter++;
-			compared = compared->next;
-		}
-		current->index = counter;
+		current->index = i++;
 		current = current->next;
 	}
 }

@@ -15,7 +15,7 @@ int     *init_array_from_args(char **argv, int *size)
         i++;
     }
     *size = count;
-    arr = malloc(count * sizeof(int)); // esto se interpreta como un array de enteros
+    arr = malloc(count * sizeof(int) + 1); // esto se interpreta como un array de enteros
     if (!arr)
     {
         ft_puterror();

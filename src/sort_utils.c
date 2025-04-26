@@ -1,76 +1,44 @@
-
 #include "../include/push_swap.h"
 
-void	sort_three(t_state *state)
+void	set_median(t_stack *stack, int size)
 {
-	int	a;
-	int	b;
-	int	c;
+	int		median;
+	t_stack	*current;
 
-	a = state->stack_a->content;
-	b = state->stack_a->next->content;
-	c = state->stack_a->next->next->content;
-	if (a < b && b < c)
+	if (!stack)
 		return ;
-	else if (a < c && c < b)
+	median = size / 2;
+	current = stack;
+	while (current)
 	{
-		ft_sa(state);
-		ft_ra(state);
-	}
-	else if (b < a && a < c)
-		ft_sa(state);
-	else if (c < a && a < b)
-		ft_rra(state);
-	else if (b < c && c < a)
-		ft_ra(state);
-	else if (c < b && b < a)
-	{
-		ft_sa(state);
-		ft_rra(state);
-	}
-}
-
-int		find_lowest_index_position(t_stack *stack)
-{
-	int		pos;
-	int		lowest_index;
-	int		lowest_pos;
-	t_stack	*temp;
-
-	pos = 0;
-	lowest_pos = 0;
-	lowest_index = INT_MAX;
-	temp = stack;
-	while (temp)
-	{
-		if (temp->index < lowest_index)
-		{
-			lowest_index = temp->index;
-			lowest_pos = pos;
-		}
-		pos++;
-		temp = temp->next;
-	}
-	return (lowest_pos);
-}
-
-void	sort_small_stack(t_state *state)
-{
-	int	pos;
-
-	while (state->size_a > 3)
-	{
-		pos = find_lowest_index_position(state->stack_a);
-		if (pos <= state->size_a / 2)
-			while (pos-- > 0)
-				ft_ra(state);
+		if (current->index <= median)
+			current->is_above_median = 1;
 		else
-			while (pos++ < state->size_a)
-				ft_rra(state);
-		ft_pb(state);
+			current->is_above_median = 0;
+		current = current->next;
 	}
-	sort_three(state);
-	while (state->size_b > 0)
-		ft_pa(state);
 }
 
+int	find_lowest_index_position(t_stack *stack)
+{
+	int	lowest_index;
+	int	position;
+	int	pos_counter;
+	t_stack	*current;
+
+	current = stack;
+	lowest_index = current->index;
+	position = 0;
+	pos_counter = 0;
+	while (current)
+	{
+		if (current->index < lowest_index)
+		{
+			lowest_index = current->index;
+			position = pos_counter;
+		}
+		pos_counter++;
+		current = current->next;
+	}
+	return (position);
+}

@@ -70,6 +70,7 @@ void     ft_rra(t_state *state)
     if (!state->stack_a || !state->stack_a->next)
         return ;
     last = state->stack_a;
+    second_last = NULL;
     while (last->next)
     {
         second_last = last;

@@ -1,27 +1,34 @@
 NAME	= push_swap
 CC		= cc
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -g
 LIBFT_DIR	= Libft
 LIBFT_A		= $(LIBFT_DIR)/libft.a
 PRINTF		= ft_printf
 PRINF_A		= $(PRINTF)/libftprintf.a
 
-SRC		= src/validator.c \
-			src/parse_data.c \
-			src/push_swap.c \
-			src/array_utils.c \
-			src/stack_utils.c \
-			src/free_stack.c \
-			src/ft_is_sorted.c \
-			src/moves.c \
-			src/moves_2.c \
-			src/combined_moves.c \
-			src/algorithm_utils.c \
-			src/algorithm_utils_2.c \
-			src/push_to_b.c \
-			src/sort_utils.c \
-			src/sort.c \
-			src/ft_puterror.c 
+SRC = src/array_utils.c \
+	  src/combined_moves.c \
+	  src/find_cheapest_node.c \
+	  src/find_min_node.c \
+	  src/free_stack.c \
+	  src/ft_is_sorted.c \
+	  src/ft_puterror.c \
+	  src/move_to_top.c \
+	  src/moves.c \
+	  src/moves_2.c \
+	  src/parse_data.c \
+	  src/push_all_except_three.c \
+	  src/push_swap.c \
+	  src/reinsert_from_b.c \
+	  src/set_above_median.c \
+	  src/set_costs.c \
+	  src/set_target_nodes.c \
+	  src/sort.c \
+	  src/sort_small_stack.c \
+	  src/sort_three.c \
+	  src/sort_utils.c \
+	  src/stack_utils.c \
+	  src/validator.c
 
 MAKEFLAGS += --no-print-directory
 

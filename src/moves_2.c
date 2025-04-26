@@ -48,6 +48,7 @@ void    ft_rrb(t_state *state)
     if (!state->stack_b || !state->stack_b->next)
         return ;
     last = state->stack_b;
+    second_last = NULL;
     while (last->next)
     {
         second_last = last;
