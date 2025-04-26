@@ -8,11 +8,7 @@ int	main(int argc, char **argv)
 		return (0);
 	stack = parse_data(argv);
 	if (!stack)
-	{
-		ft_puterror();
 		return (EXIT_FAILURE);
-	}
-		
 	if (!ft_is_sorted(stack))
 		sort(stack);
 	free_stack(&stack);
