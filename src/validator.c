@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validator.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ingjimen <ingjimen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ingjimen <ingjimen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 17:52:33 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/28 07:33:18 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/28 09:43:11 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,8 @@
 
 int	ft_isspace(char c)
 {
-	if (c == ' ' || (c >= 9 && c <= 13))
-		return (1);
-	return (0);
+	return (c == ' ' || (c >= 9 && c <= 13));
 }
-
-#include "../include/push_swap.h"
 
 static int	is_empty_or_space(const char *str)
 {
@@ -49,7 +45,8 @@ int	validate_and_convert(char **argv)
 			ft_puterror();
 			return (EXIT_FAILURE);
 		}
-		if (!ft_is_valid_number(argv[i]) || validate_limits(argv[i]) == EXIT_FAILURE)
+		if (!ft_is_valid_number(argv[i])
+			|| validate_limits(argv[i]) == EXIT_FAILURE)
 		{
 			ft_puterror();
 			return (EXIT_FAILURE);
@@ -58,8 +55,6 @@ int	validate_and_convert(char **argv)
 	}
 	return (EXIT_SUCCESS);
 }
-
-
 
 int	ft_is_valid_number(char *str)
 {
