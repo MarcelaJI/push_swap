@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ingjimen <ingjimen@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ingjimen <ingjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 10:17:46 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/28 10:43:26 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/29 00:27:23 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,15 @@ void	ft_free_strs_arr(char ***arr)
 
 void	free_stack(t_stack **stack)
 {
-	t_stack	*temp;
+	t_stack	*tmp;
 
 	if (!stack || !*stack)
 		return ;
 	while (*stack)
 	{
-		temp = (*stack)->next;
+		tmp = (*stack)->next;
 		free(*stack);
-		*stack = temp;
+		*stack = tmp;
 	}
 	*stack = NULL;
 }

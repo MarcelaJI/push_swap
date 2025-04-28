@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ingjimen <ingjimen@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ingjimen <ingjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 09:55:42 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/26 18:05:23 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/29 00:47:26 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,14 +85,14 @@ void	print_stack(t_stack *stack)
 
 void	set_index(t_stack *stack)
 {
-	int		i;
+	int		index;
 	t_stack	*current;
 
-	i = 0;
 	current = stack;
+	index = 0;
 	while (current)
 	{
-		current->index = i++;
+		current->index = index++;
 		current = current->next;
 	}
 }
