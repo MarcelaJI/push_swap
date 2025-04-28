@@ -6,11 +6,27 @@
 /*   By: ingjimen <ingjimen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 10:17:46 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/26 17:40:58 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/28 10:43:26 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+void	ft_free_strs_arr(char ***arr)
+{
+	int	i;
+
+	if (!arr || !*arr)
+		return ;
+	i = 0;
+	while ((*arr)[i])
+	{
+		free((*arr)[i]);
+		i++;
+	}
+	free(*arr);
+	*arr = NULL;
+}
 
 void	free_stack(t_stack **stack)
 {

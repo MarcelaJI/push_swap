@@ -6,7 +6,7 @@
 /*   By: ingjimen <ingjimen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 17:45:26 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/28 10:07:07 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/28 11:09:12 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,15 +51,16 @@ typedef struct s_state
 }					t_state;
 
 void				ft_puterror(void);
+void				ft_free_strs_arr(char ***arr);
 void				free_stack(t_stack **stack);
 void				free_state(t_state **state);
 void				print_stack(t_stack *stack);
-t_stack				*parse_data(char **argv);
-int					ft_isspace(char c);
+t_stack				*parse_data(int argc, char **argv);
 int					ft_is_valid_number(char *str);
 int					validate_and_convert(char **argv);
 int					validate_limits(char *str);
-void					init_array_from_args(char **argv, int *size);
+int					*init_array_from_args(char **argv, int *size);
+int					count_numbers(char **argv);
 int					fill_array_from_args(char **argv, int *arr);
 t_stack				*array_to_stack(int *arr, int size);
 t_stack				*create_stack_node(int value);

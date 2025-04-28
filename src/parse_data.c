@@ -6,7 +6,7 @@
 /*   By: ingjimen <ingjimen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 17:39:00 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/28 10:25:00 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/28 11:23:03 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,37 +32,41 @@ static int	has_duplicates(int *arr, int size)
 	return (0);
 }
 
-t_stack	*parse_data(char **argv)
+static int	check_errors(char **argv, int **array, int *size)
 {
-	t_stack	*stack;
-	int		*arr;
-	int		size;
-	
-	stack = NULL;
-	arr = NULL;
-	size = 0;
 	if (validate_and_convert(argv) == EXIT_FAILURE)
-		return (NULL);
-	arr = init_array_from_args(argv, &size);
-	if (!arr)
-		return (NULL);
-	if (fill_array_from_args(argv, arr) == EXIT_FAILURE)
+		return (EXIT_FAILURE);
+	*array = init_array_from_args(argv, size);
+	if (!*array)
+		return (EXIT_FAILURE);
+	if (fill_array_from_args(argv, *array) == EXIT_FAILURE
+		|| has_duplicates(*array, *size))
 	{
-		free(arr);
+		free(*array);
+		return (EXIT_FAILURE);
+	}
+	return (EXIT_SUCCESS);
+}
+
+t_stack	*parse_data(int argc, char **argv)
+{
+	int		*array;
+	t_stack	*stack;
+	int		size;
+
+	array = NULL;
+	stack = NULL;
+	size = 0;
+	if (argc < 2)
+		return (NULL);
+	if (check_errors(argv, &array, &size) == EXIT_FAILURE)
+	{
 		ft_puterror();
 		return (NULL);
 	}
-	if (has_duplicates(arr, size))
-	{
-		free(arr);
-		ft_puterror();
-		return (NULL);
-	}
-	stack = array_to_stack(arr, size);
-	free(arr);
+	stack = array_to_stack(array, size);
+	free(array);
 	if (!stack)
 		ft_puterror();
 	return (stack);
 }
-
-
