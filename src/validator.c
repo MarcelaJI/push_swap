@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validator.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ingjimen <ingjimen@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ingjimen <ingjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 17:52:33 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/26 19:17:56 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/28 07:16:58 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,21 @@ int	ft_isspace(char c)
 	return (0);
 }
 
-static int	is_empty_or_space(const char *str)
-{
-	int	i;
+// static int	is_empty_or_space(const char *str)
+// {
+// 	int	i;
 
-	i = 0;
-	if (!str || str[0] == '\0')
-		return (1);
-	while (str[i])
-	{
-		if (!ft_isspace(str[i]))
-			return (0);
-		i++;
-	}
-	return (1);
-}
+// 	i = 0;
+// 	if (!str || str[0] == '\0')
+// 		return (1);
+// 	while (str[i])
+// 	{
+// 		if (!ft_isspace(str[i]))
+// 			return (0);
+// 		i++;
+// 	}
+// 	return (1);
+// }
 
 int	validate_and_convert(char **argv)
 {
@@ -42,8 +42,7 @@ int	validate_and_convert(char **argv)
 	i = 1;
 	while (argv[i])
 	{
-		if (is_empty_or_space(argv[i]) || !ft_is_valid_number(argv[i])
-			|| validate_limits(argv[i]) == EXIT_FAILURE)
+		if (!ft_is_valid_number(argv[i]) || validate_limits(argv[i]) == EXIT_FAILURE)
 		{
 			ft_puterror();
 			return (EXIT_FAILURE);
@@ -52,6 +51,7 @@ int	validate_and_convert(char **argv)
 	}
 	return (EXIT_SUCCESS);
 }
+
 
 int	ft_is_valid_number(char *str)
 {
