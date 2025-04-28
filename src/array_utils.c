@@ -6,7 +6,7 @@
 /*   By: ingjimen <ingjimen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 17:21:57 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/28 10:32:52 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/28 11:32:27 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	count_numbers(char **argv)
 {
 	int		count;
 	int		i;
+	int		j;
 	char	**split;
 
 	count = 0;
@@ -25,11 +26,13 @@ int	count_numbers(char **argv)
 		split = ft_split(argv[i], ' ');
 		if (!split)
 			return (-1);
-		while (*split)
+		j = 0;
+		while (split[j])
 		{
 			count++;
-			split++;
+			j++;
 		}
+		ft_free_strs_arr(&split);
 		i++;
 	}
 	return (count);
