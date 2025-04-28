@@ -6,52 +6,71 @@
 /*   By: ingjimen <ingjimen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 17:21:57 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/26 18:04:28 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/28 10:32:52 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	*init_array_from_args(char **argv, int *size)
+int	count_numbers(char **argv)
 {
-	int	i;
-	int	count;
-	int	*arr;
+	int		count;
+	int		i;
+	char	**split;
 
-	i = 1;
 	count = 0;
+	i = 1;
 	while (argv[i])
 	{
-		count++;
+		split = ft_split(argv[i], ' ');
+		if (!split)
+			return (-1);
+		while (*split)
+		{
+			count++;
+			split++;
+		}
 		i++;
 	}
-	*size = count;
-	arr = malloc(count * sizeof(int) + 1);
-	if (!arr)
-	{
-		ft_puterror();
+	return (count);
+}
+
+int	*init_array_from_args(char **argv, int *size)
+{
+	int	*array;
+	int	total;
+
+	total = count_numbers(argv);
+	if (total <= 0)
 		return (NULL);
-	}
-	return (arr);
+	array = malloc(sizeof(int) * total);
+	if (!array)
+		return (NULL);
+	*size = total;
+	return (array);
 }
 
 int	fill_array_from_args(char **argv, int *arr)
 {
-	int	i;
-	int	index;
-	int	number;
+	int		i;
+	int		j;
+	int		index;
+	char	**split;
 
 	i = 1;
 	index = 0;
 	while (argv[i])
 	{
-		number = ft_atol(argv[i]);
-		if (number < INT_MIN || number > INT_MAX)
-		{
-			ft_puterror();
+		split = ft_split(argv[i], ' ');
+		if (!split)
 			return (EXIT_FAILURE);
+		j = 0;
+		while (split[j])
+		{
+			arr[index++] = ft_atoi(split[j]);
+			j++;
 		}
-		arr[index++] = (int)number;
+		ft_free_strs_arr(&split);
 		i++;
 	}
 	return (EXIT_SUCCESS);

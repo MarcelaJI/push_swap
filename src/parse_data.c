@@ -6,7 +6,7 @@
 /*   By: ingjimen <ingjimen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 17:39:00 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/26 19:10:27 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/28 10:25:00 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,22 @@ t_stack	*parse_data(char **argv)
 	t_stack	*stack;
 	int		*arr;
 	int		size;
-
+	
 	stack = NULL;
 	arr = NULL;
 	size = 0;
 	if (validate_and_convert(argv) == EXIT_FAILURE)
 		return (NULL);
 	arr = init_array_from_args(argv, &size);
-	if (arr == NULL || fill_array_from_args(argv, arr) == EXIT_FAILURE
-		|| has_duplicates(arr, size))
+	if (!arr)
+		return (NULL);
+	if (fill_array_from_args(argv, arr) == EXIT_FAILURE)
+	{
+		free(arr);
+		ft_puterror();
+		return (NULL);
+	}
+	if (has_duplicates(arr, size))
 	{
 		free(arr);
 		ft_puterror();
@@ -57,3 +64,5 @@ t_stack	*parse_data(char **argv)
 		ft_puterror();
 	return (stack);
 }
+
+

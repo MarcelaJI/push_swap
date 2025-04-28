@@ -6,7 +6,7 @@
 /*   By: ingjimen <ingjimen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 17:45:26 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/26 19:18:45 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/28 10:07:07 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int					ft_isspace(char c);
 int					ft_is_valid_number(char *str);
 int					validate_and_convert(char **argv);
 int					validate_limits(char *str);
-int					*init_array_from_args(char **argv, int *size);
+void					init_array_from_args(char **argv, int *size);
 int					fill_array_from_args(char **argv, int *arr);
 t_stack				*array_to_stack(int *arr, int size);
 t_stack				*create_stack_node(int value);
