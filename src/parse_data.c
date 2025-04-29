@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_data.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ingjimen <ingjimen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ingjimen <ingjimen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 17:39:00 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/29 00:22:57 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/29 09:20:20 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ static int	check_errors(char **argv, int **array, int *size)
 	*array = init_array_from_args(argv, size);
 	if (!*array)
 		return (EXIT_FAILURE);
-	if (fill_array_from_args(argv, *array) == EXIT_FAILURE || has_duplicates(*array, *size))
+	if (fill_array_from_args(argv, *array) == EXIT_FAILURE
+		|| has_duplicates(*array, *size))
 	{
 		free(*array);
 		return (EXIT_FAILURE);
@@ -53,11 +54,11 @@ t_stack	*parse_data(int argc, char **argv)
 	t_stack	*stack;
 	int		size;
 
-	if (argc < 2)
-		return (NULL);
 	array = NULL;
 	stack = NULL;
 	size = 0;
+	if (argc < 2)
+		return (NULL);
 	if (check_errors(argv, &array, &size) == EXIT_FAILURE)
 	{
 		ft_puterror();
@@ -67,8 +68,5 @@ t_stack	*parse_data(int argc, char **argv)
 	free(array);
 	if (!stack)
 		ft_puterror();
-	set_index(stack);
 	return (stack);
 }
-
-

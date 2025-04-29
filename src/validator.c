@@ -3,26 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   validator.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ingjimen <ingjimen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ingjimen <ingjimen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 17:52:33 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/29 00:25:27 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/29 09:24:15 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+static int	validate_split(char **split)
+{
+	int	j;
+
+	j = 0;
+	while (split[j])
+	{
+		if (!ft_is_valid_number(split[j])
+			|| validate_limits(split[j]) == EXIT_FAILURE)
+			return (EXIT_FAILURE);
+		j++;
+	}
+	return (EXIT_SUCCESS);
+}
+
 int	validate_and_convert(char **argv)
 {
-	int	i;
+	int		i;
+	char	**split;
 
 	i = 1;
 	while (argv[i])
 	{
-		if (!argv[i][0])
+		split = ft_split(argv[i], ' ');
+		if (!split || !split[0] || validate_split(split) == EXIT_FAILURE)
+		{
+			ft_free_strs_arr(&split);
 			return (EXIT_FAILURE);
-		if (!ft_is_valid_number(argv[i]) || validate_limits(argv[i]) == EXIT_FAILURE)
-			return (EXIT_FAILURE);
+		}
+		ft_free_strs_arr(&split);
 		i++;
 	}
 	return (EXIT_SUCCESS);
@@ -59,6 +78,3 @@ int	validate_limits(char *str)
 		return (EXIT_FAILURE);
 	return (EXIT_SUCCESS);
 }
-
-
-
