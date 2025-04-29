@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   array_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ingjimen <ingjimen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ingjimen <ingjimen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 17:21:57 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/29 00:24:02 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/29 09:31:52 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,3 @@ int	fill_array_from_args(char **argv, int *arr)
 	}
 	return (EXIT_SUCCESS);
 }
-
-

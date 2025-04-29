@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_all_except_three.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ingjimen <ingjimen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ingjimen <ingjimen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 17:49:29 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/29 00:44:43 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/29 09:32:06 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,3 @@ void	push_all_except_three(t_state *state)
 	while (state->size_a > 3)
 		ft_pb(state);
 }
-
-

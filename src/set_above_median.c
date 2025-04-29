@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   set_above_median.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ingjimen <ingjimen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ingjimen <ingjimen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 17:50:42 by ingjimen          #+#    #+#             */
-/*   Updated: 2025/04/29 00:06:28 by ingjimen         ###   ########.fr       */
+/*   Updated: 2025/04/29 09:31:32 by ingjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void set_above_median(t_stack *stack, int size)
+void	set_above_median(t_stack *stack, int size)
 {
-	int i;
-	int median;
-	t_stack *current;
+	int		i;
+	int		median;
+	t_stack	*current;
 
 	if (!stack)
 		return ;
@@ -30,4 +30,3 @@ void set_above_median(t_stack *stack, int size)
 		i++;
 	}
 }
-
