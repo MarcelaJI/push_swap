@@ -35,31 +35,22 @@ Esto imprimirá la secuencia de operaciones necesarias para ordenar esa lista.
 ✔️ Comprobación con checker
 Puedes usar el checker oficial (checker_linux o checker_Mac) para verificar que tu salida es correcta:
 
-bash
-Copiar
-Editar
 ARG="4 2 3 1"; ./push_swap $ARG | ./checker_linux $ARG
 Resultado esperado: OK
 
 🔍 Ejemplos de prueba
-bash
-Copiar
-Editar
+
 ARG=$(seq 1 100 | sort -R | tr '\n' ' ')
 ./push_swap $ARG | ./checker_linux $ARG
 🧹 Limpieza
 Para eliminar los archivos compilados, ejecuta:
 
-bash
-Copiar
-Editar
 make fclean
 🧪 Tests de memory leaks (Valgrind)
-bash
-Copiar
-Editar
+
 valgrind --leak-check=full --show-leak-kinds=all ./push_swap 3 2 1
 🧮 Estructura general del algoritmo
+
 El programa convierte los argumentos en una pila A (doblemente enlazada).
 
 Si la pila ya está ordenada, termina.
