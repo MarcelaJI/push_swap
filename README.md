@@ -65,7 +65,10 @@ Se buscan nodos objetivo y se calculan costes de operaciones.
 
 Finalmente, se rota la pila A para dejar el menor valor en el top.
 
-👩‍💻 Autor
+
+```
+
+👩💻 Autora
 Desarrollado con ❤️ por Marcela Jimenez
 
 Login 42: ingjimen
