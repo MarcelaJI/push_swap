@@ -68,7 +68,7 @@ Finalmente, se rota la pila A para dejar el menor valor en el top.
 
 ```
 
-👩💻 Autora
+👩💻 Autora:
 
 Desarrollado con ❤️ por Marcela Jimenez
 
