@@ -24,56 +24,80 @@ git clone https://github.com/MarcelaJI/push_swap.git
 cd push_swap
 make
 
-Esto generará el ejecutable:
-./push_swap
-
-▶️ Ejecución
-Puedes ejecutar el programa pasando una lista de números como argumentos:
-./push_swap 3 2 1
-Esto imprimirá la secuencia de operaciones necesarias para ordenar esa lista.
-
-✔️ Comprobación con checker
-Puedes usar el checker oficial (checker_linux o checker_Mac) para verificar que tu salida es correcta:
-
-ARG="4 2 3 1"; ./push_swap $ARG | ./checker_linux $ARG
-Resultado esperado: OK
-
-🔍 Ejemplos de prueba
-
-ARG=$(seq 1 100 | sort -R | tr '\n' ' ')
-./push_swap $ARG | ./checker_linux $ARG
-🧹 Limpieza
-Para eliminar los archivos compilados, ejecuta:
-
-make fclean
-🧪 Tests de memory leaks (Valgrind)
-
-valgrind --leak-check=full --show-leak-kinds=all ./push_swap 3 2 1
-🧮 Estructura general del algoritmo
-
-El programa convierte los argumentos en una pila A (doblemente enlazada).
-
-Si la pila ya está ordenada, termina.
-
-Si no, se aplica un algoritmo de ordenación personalizado:
-
-Si hay 3 o menos elementos: ordenación específica.
-
-Si hay más: se empujan los elementos menos relevantes a la pila B, y se reintegran en orden.
-
-Se buscan nodos objetivo y se calculan costes de operaciones.
-
-Finalmente, se rota la pila A para dejar el menor valor en el top.
-
-
 ```
 
-👩💻 Autora:
+Esto generará el ejecutable:
 
-Desarrollado con ❤️ por Marcela Jimenez
+```
+./push_swap
+```
+
+## ▶️ Ejecución
+
+Puedes ejecutar el programa pasando una lista de números como argumentos:
+
+```
+./push_swap 3 2 1
+Esto imprimirá la secuencia de operaciones necesarias para ordenar esa lista.
+```
+
+## ✔️ Comprobación con checker
+
+Puedes usar el checker oficial (checker_linux o checker_Mac) para verificar que tu salida es correcta:
+
+```
+ARG="4 2 3 1"; ./push_swap $ARG | ./checker_linux $ARG
+Resultado esperado: OK
+```
+
+## 🔍 Ejemplos de prueba
+
+```
+ARG=$(seq 1 100 | sort -R | tr '\n' ' ')
+./push_swap $ARG | ./checker_linux $ARG
+```
+
+## 🧹 Limpieza
+
+Para eliminar los archivos compilados, ejecuta:
+
+```
+make fclean
+```
+
+## 🧪 Tests de memory leaks (Valgrind)
+
+```
+valgrind --leak-check=full --show-leak-kinds=all ./push_swap 3 2 1
+🧮 Estructura general del algoritmo
+```
+---
+
+
+- El programa convierte los argumentos en una pila A (doblemente enlazada).
+
+- Si la pila ya está ordenada, termina.
+
+- Si no, se aplica un algoritmo de ordenación personalizado:
+
+    - Si hay 3 o menos elementos: ordenación específica.
+
+    - Si hay más: se empujan los elementos menos relevantes a la pila B, y se reintegran en orden.
+
+    - Se buscan nodos objetivo y se calculan costes de operaciones.
+
+    - Finalmente, se rota la pila A para dejar el menor valor en el top.
+
+
+
+---
+
+👩💻 Autora:
 
 Login 42: ingjimen
 
 GitHub: @MarcelaJI 
+
+---
 
 ¡Gracias por visitar mi proyecto! ⭐
